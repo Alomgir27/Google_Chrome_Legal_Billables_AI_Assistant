@@ -254,8 +254,8 @@ class ClioService {
       data: {
         type: "TimeEntry",
         note: summary,
-        quantity: timeInSeconds, // i2025-07-20 dicce but 2025-07-21 deya ucit
-        date: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0],
+        quantity: timeInSeconds,
+        date: new Date().toISOString().split('T')[0],
         non_billable: false,
         no_charge: false,
         tax_setting: "no_tax",
