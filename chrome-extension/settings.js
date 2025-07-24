@@ -1,6 +1,6 @@
 class SettingsPage {
   constructor() {
-    this.apiBaseUrl = 'http://localhost:3000/api';
+    this.apiBaseUrl = 'https://googlechromelegalbillablesaiassistant-production.up.railway.app//api';
     this.settings = {};
     this.init();
   }
@@ -80,7 +80,7 @@ class SettingsPage {
     return {
       clientId: 'EKamqHz9o8L6fNvtJRkpIHqDzwFWqeAsqAYLhN5A',
       clientSecret: 'QhHqCuUyhcgvdYlWt4gaOkpcqUZJKUFpbsCVocvb',
-      redirectUri: 'http://127.0.0.1:3000/auth/clio/callback',
+      redirectUri: 'https://googlechromelegalbillablesaiassistant-production.up.railway.app//auth/clio/callback',
       appId: '20912'
     };
   }

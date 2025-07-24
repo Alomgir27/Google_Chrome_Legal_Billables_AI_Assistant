@@ -705,7 +705,7 @@
         console.log('📝 Sending data to backend:', requestData);
 
         // Call backend API
-        const response = await fetch('http://localhost:3000/api/process-billable', {
+        const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/process-billable', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -753,7 +753,7 @@
       try {
         console.log('🔗 Testing backend connection...');
         
-        const response = await fetch('http://localhost:3000/api/health');
+        const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/health');
         
         if (response.ok) {
           const data = await response.json();
@@ -1598,7 +1598,7 @@
     console.log('🔗 Testing backend API connection...');
     
     try {
-      const response = await fetch('http://localhost:3000/api/health');
+      const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/health');
       if (response.ok) {
         const data = await response.json();
         console.log('✅ Backend API is working:', data);
@@ -1620,7 +1620,7 @@
     console.log('📊 Gmail Tracker Status:');
     console.log('Active trackers:', activeTrackers);
     console.log('🚀 Mode: Backend API only');
-    console.log('✅ API endpoint: http://localhost:3000/api/process-billable');
+    console.log('✅ API endpoint: https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/process-billable');
     
     if (activeTrackers > 0) {
       const trackerDetails = Array.from(tracker.trackedComposeWindows.values()).map((t, i) => ({
@@ -1639,7 +1639,7 @@
   
   console.log('🚀 Gmail Billable Tracker loaded successfully!');
   console.log('🚀 Extension Mode: BACKEND API ONLY');
-  console.log('✅ API endpoint: http://localhost:3000/api/process-billable');
+  console.log('✅ API endpoint: https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/process-billable');
   console.log('💡 Test backend: testBillableBackend()');
   console.log('💡 Check tracker: testTracker()');
 })(); // End of IIFE

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateStatus('🔄 Checking connection...', 'info');
             
             // Only one API call - wait for response
-            const response = await fetch('http://localhost:3000/api/health');
+            const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/health');
             
             if (response.ok) {
                 const data = await response.json();
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('🔗 Starting Clio OAuth flow...');
             updateStatus('🔄 Getting OAuth URL...', 'info');
             
-            const response = await fetch('http://localhost:3000/api/auth/url');
+            const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/auth/url');
             
             if (response.ok) {
                 const data = await response.json();
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             console.log('🔄 Fetching fallback token from backend...');
             
-            const response = await fetch('http://localhost:3000/api/get-token', {
+            const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/get-token', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load and display today's statistics
     async function loadTodaysStats() {
         try {
-            const response = await fetch('http://localhost:3000/api/stats');
+            const response = await fetch('https://googlechromelegalbillablesaiassistant-production.up.railway.app//api/stats');
             
             if (response.ok) {
                 const data = await response.json();

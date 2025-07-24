@@ -1,6 +1,6 @@
 class AllEntriesPage {
   constructor() {
-    this.apiBaseUrl = 'http://localhost:3000/api';
+    this.apiBaseUrl = 'https://googlechromelegalbillablesaiassistant-production.up.railway.app//api';
     this.entries = [];
     this.filteredEntries = [];
     this.currentPage = 1;

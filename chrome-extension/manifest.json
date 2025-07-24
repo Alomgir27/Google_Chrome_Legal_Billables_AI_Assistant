@@ -21,7 +21,7 @@
     "https://app.clio.com/*",
     "https://app.goclio.com/*",
     "https://app.mycase.com/*",
-    "http://localhost:3000/*"
+    "https://googlechromelegalbillablesaiassistant-production.up.railway.app//*"
   ],
   
   "content_scripts": [
