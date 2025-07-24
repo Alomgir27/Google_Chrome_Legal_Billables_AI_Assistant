@@ -143,7 +143,7 @@ class ClioService {
       throw new Error('Clio client ID not configured');
     }
 
-    const redirectUri = 'https://googlechromelegalbillablesaiassistant-production.up.railway.app/auth/clio/callback'; // Backend callback URL
+    const redirectUri = 'https://googlechromelegalbillablesaiassistant-production.up.railway.appauth/clio/callback'; // Backend callback URL
     const scope = 'read write';
     const state = Math.random().toString(36).substring(2, 15);
 
@@ -164,7 +164,7 @@ class ClioService {
         client_id: this.clientId,
         client_secret: this.clientSecret,
         code: authCode,
-        redirect_uri: 'https://googlechromelegalbillablesaiassistant-production.up.railway.app/auth/clio/callback'
+        redirect_uri: 'https://googlechromelegalbillablesaiassistant-production.up.railway.appauth/clio/callback'
       });
 
       const response = await axios.post('https://app.clio.com/oauth/token', tokenData.toString(), {
@@ -447,7 +447,7 @@ class ClioService {
       throw new Error('Clio client ID not configured');
     }
 
-    const redirectUri = 'https://googlechromelegalbillablesaiassistant-production.up.railway.app/auth/clio/callback';
+    const redirectUri = 'https://googlechromelegalbillablesaiassistant-production.up.railway.appauth/clio/callback';
     const scope = 'read write';
     const state = Math.random().toString(36).substring(2, 15);
 
