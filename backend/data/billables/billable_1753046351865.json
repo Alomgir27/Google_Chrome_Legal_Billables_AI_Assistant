@@ -1,0 +1,16 @@
+{
+  "id": 1753046351865,
+  "summary": "Drafted internal communication outlining the functionality of the inactivity auto-pause feature for time tracking purposes, ensuring compliance with billing protocols.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-20T21:19:09.963Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "This is a demo title",
+    "content": "This is a demo text. Now see how inactivity will workwithin 45s it will auto pause inactivity "
+  },
+  "createdAt": "2025-07-20T21:19:11.865Z",
+  "source": "chrome-extension"
+}

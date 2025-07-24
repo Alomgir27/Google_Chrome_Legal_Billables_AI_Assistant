@@ -1,0 +1,16 @@
+{
+  "id": 1752902290948,
+  "summary": "Drafted a demonstration email outlining the functionality and application of the billing system for client review and understanding.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-19T05:18:07.857Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "Hey, this is my lasti",
+    "content": "This is a demo how billlabiluty will work"
+  },
+  "createdAt": "2025-07-19T05:18:10.949Z",
+  "source": "chrome-extension"
+}

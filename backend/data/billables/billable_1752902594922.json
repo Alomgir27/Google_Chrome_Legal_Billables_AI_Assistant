@@ -1,0 +1,16 @@
+{
+  "id": 1752902594922,
+  "summary": "Drafted and sent correspondence to client inquiring about procedural steps and necessary documentation for upcoming legal matters.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-19T05:23:11.736Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "Hello test",
+    "content": "Hy, there how to do that"
+  },
+  "createdAt": "2025-07-19T05:23:14.922Z",
+  "source": "chrome-extension"
+}

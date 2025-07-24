@@ -1,0 +1,16 @@
+{
+  "id": 1753046625307,
+  "summary": "Drafted and sent correspondence to client to clarify legal matters and discuss next steps in case strategy.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-20T21:23:43.453Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "dfg",
+    "content": "dgfgt"
+  },
+  "createdAt": "2025-07-20T21:23:45.307Z",
+  "source": "chrome-extension"
+}

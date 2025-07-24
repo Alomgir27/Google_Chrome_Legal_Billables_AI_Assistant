@@ -1,0 +1,110 @@
+.billable-tracker-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  font-family: 'Google Sans', Roboto, sans-serif;
+  font-size: 13px;
+  margin-left: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.billable-time {
+  color: #1a73e8;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.billable-status {
+  color: #5f6368;
+  font-size: 12px;
+  padding: 2px 8px;
+  background: #e8f0fe;
+  border-radius: 4px;
+}
+
+.billable-tracker-indicator.tracking .billable-status {
+  background: #e8f5e8;
+  color: #137333;
+}
+
+.billable-tracker-indicator.paused .billable-status {
+  background: #fef7e0;
+  color: #b06000;
+}
+
+.billable-success-notification,
+.billable-error-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  max-width: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+.billable-success-notification {
+  border-left: 4px solid #34a853;
+}
+
+.billable-error-notification {
+  border-left: 4px solid #ea4335;
+}
+
+.notification-content {
+  padding: 16px;
+}
+
+.notification-title {
+  font-family: 'Google Sans', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #202124;
+}
+
+.notification-details {
+  font-size: 13px;
+  color: #5f6368;
+  line-height: 1.4;
+}
+
+.notification-details div {
+  margin-bottom: 4px;
+}
+
+.notification-details div:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+[data-billable-tracked] .billable-tracker-indicator {
+  display: flex;
+}
+
+.billable-tracker-indicator:hover {
+  background: #f1f3f4;
+}
+
+.billable-time::before {
+  content: "⏱️";
+  margin-right: 4px;
+} 

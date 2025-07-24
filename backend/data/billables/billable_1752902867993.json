@@ -1,0 +1,16 @@
+{
+  "id": 1752902867993,
+  "summary": "Drafted and sent correspondence to client to confirm communication preferences and establish rapport for ongoing legal matters.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-19T05:27:45.574Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "Hello testing",
+    "content": "How are you?"
+  },
+  "createdAt": "2025-07-19T05:27:47.993Z",
+  "source": "chrome-extension"
+}

@@ -1,0 +1,16 @@
+{
+  "id": 1752901524779,
+  "summary": "Drafted and sent correspondence to client addressing key issues related to case strategy and next steps in legal proceedings.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-19T05:05:24.777Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "asdsf",
+    "content": "dfgb hg"
+  },
+  "createdAt": "2025-07-19T05:05:24.779Z",
+  "source": "chrome-extension"
+}

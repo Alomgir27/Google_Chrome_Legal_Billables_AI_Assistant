@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Legal Billables AI Assistant",
+  "version": "1.0.0",
+  "description": "AI-powered billables tracking for lawyers - automatically log email time and generate summaries",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "identity",
+    "identity.email",
+    "scripting",
+    "downloads"
+  ],
+  
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://gmail.com/*",
+    "https://api.openai.com/*",
+    "https://app.practicepanther.com/*",
+    "https://app.clio.com/*",
+    "https://app.goclio.com/*",
+    "https://app.mycase.com/*",
+    "http://localhost:3000/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*", "https://gmail.com/*"],
+      "js": ["content/gmail-tracker.js"],
+      "css": ["content/styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Legal Billables AI",
+    "default_icon": "icons/icon.png"
+  },
+  
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/*",
+        "all-entries.html",
+        "settings.html",
+        "reports.html",
+        "manual-entry.html",
+        "about.html"
+      ],
+      "matches": ["https://mail.google.com/*", "https://gmail.com/*"]
+    }
+  ]
+} 

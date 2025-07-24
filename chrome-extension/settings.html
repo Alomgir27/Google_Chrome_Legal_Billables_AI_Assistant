@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings - Legal Billables AI</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #202124;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .back-btn {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .settings-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .setting-group {
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .group-header {
+      background: #f8f9fa;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e8eaed;
+      font-weight: 600;
+      font-size: 16px;
+      color: #202124;
+    }
+
+    .setting-item {
+      padding: 20px;
+      border-bottom: 1px solid #f1f3f4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .setting-item:last-child {
+      border-bottom: none;
+    }
+
+    .setting-info {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .setting-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #202124;
+      margin-bottom: 4px;
+    }
+
+    .setting-description {
+      font-size: 13px;
+      color: #5f6368;
+      line-height: 1.4;
+    }
+
+    .setting-control {
+      flex-shrink: 0;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      background: #dadce0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .toggle-switch.active {
+      background: #1a73e8;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .toggle-switch.active .toggle-slider {
+      transform: translateX(20px);
+    }
+
+    .input-field {
+      padding: 8px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 200px;
+    }
+
+    .select-field {
+      padding: 8px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      width: 200px;
+    }
+
+    .btn {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #1557b0;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #1a73e8;
+      border: 1px solid #dadce0;
+    }
+
+    .btn.secondary:hover {
+      background: #f8f9fa;
+    }
+
+    .btn.danger {
+      background: #d93025;
+    }
+
+    .btn.danger:hover {
+      background: #b52d20;
+    }
+
+    .actions-bar {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      position: sticky;
+      bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      color: white;
+      font-size: 14px;
+      z-index: 10000;
+      transform: translateX(100%);
+      transition: transform 0.3s;
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification.success {
+      background: #4caf50;
+    }
+
+    .notification.error {
+      background: #f44336;
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .status-indicator.connected {
+      background: #4caf50;
+    }
+
+    .status-indicator.disconnected {
+      background: #f44336;
+    }
+
+    .status-indicator.warning {
+      background: #ff9800;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>⚙️ Settings</h1>
+    <button class="back-btn">← Back</button>
+  </div>
+
+  <div class="settings-container">
+    <!-- General Settings -->
+    <div class="setting-group">
+      <div class="group-header">General Settings</div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Enable Email Tracking</div>
+          <div class="setting-description">Automatically track time spent on email composition in Gmail</div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch active" id="email-tracking-toggle">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Auto-pause Timer</div>
+          <div class="setting-description">Automatically pause tracking after period of inactivity</div>
+        </div>
+        <div class="setting-control">
+          <select class="select-field" id="auto-pause-duration">
+            <option value="300">5 minutes</option>
+            <option value="600">10 minutes</option>
+            <option value="900">15 minutes</option>
+            <option value="1800">30 minutes</option>
+            <option value="0">Never</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Default Hourly Rate</div>
+          <div class="setting-description">Used for revenue estimation in reports and statistics</div>
+        </div>
+        <div class="setting-control">
+          <input type="number" class="input-field" id="hourly-rate" placeholder="200" min="0" step="25">
+        </div>
+      </div>
+    </div>
+
+    <!-- API & Integration Settings -->
+    <div class="setting-group">
+      <div class="group-header">API & Integration</div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Backend API Status</div>
+          <div class="setting-description">
+            <span class="status-indicator connected"></span>
+            Connected to http://localhost:3000/api
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn secondary" id="test-api-btn">Test Connection</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">OpenAI Integration</div>
+          <div class="setting-description">
+            <span class="status-indicator connected"></span>
+            AI-powered summary generation enabled
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn secondary" id="test-openai-btn">Test OpenAI</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Clio API Configuration</div>
+          <div class="setting-description">
+            <span class="status-indicator connected"></span>
+            Pre-configured with your Clio app credentials
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn" id="configure-clio-btn">View Configuration</button>
+        </div>
+      </div>
+
+      <div class="setting-item" id="clio-config-section" style="display: none;">
+        <div class="setting-info" style="width: 100%;">
+          <div class="setting-title">Clio Credentials</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px;">
+            <div>
+              <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">Client ID</label>
+              <input type="text" class="input-field" id="clio-client-id" placeholder="Your Clio Client ID" style="width: 100%;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">Client Secret</label>
+              <input type="password" class="input-field" id="clio-client-secret" placeholder="Your Clio Client Secret" style="width: 100%;">
+            </div>
+          </div>
+          <div style="margin-top: 12px;">
+            <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">Redirect URI</label>
+            <input type="text" class="input-field" id="clio-redirect-uri" placeholder="https://your-domain.com/auth/callback" style="width: 100%;">
+          </div>
+          
+          <!-- Direct Access Token Section -->
+          <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #e0e0e0; opacity: 0.6;">
+            <div style="margin-bottom: 12px;">
+              <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px; font-weight: 600;">Automatic OAuth (Recommended)</label>
+              <p style="font-size: 11px; color: #888; margin: 0 0 8px 0;">
+                ✅ Use "Get Token" button in popup for automatic OAuth flow<br>
+                ⚠️ Manual token setting below is for advanced users only
+              </p>
+              <input type="password" class="input-field" id="clio-access-token" placeholder="Advanced: Manual access token..." style="width: 100%;" disabled>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <button class="btn secondary" id="set-clio-token" disabled style="opacity: 0.5;">Manual Set Token</button>
+              <button class="btn secondary" id="clear-clio-token">Clear Token</button>
+              <span id="token-status" style="font-size: 12px; color: #666;"></span>
+            </div>
+            <div style="margin-top: 8px; padding: 8px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px;">
+              <p style="font-size: 11px; color: #856404; margin: 0;">
+                💡 <strong>Tip:</strong> Use the "Get Token" button in the popup for automatic OAuth flow instead of manual token entry.
+              </p>
+            </div>
+          </div>
+          
+          <div style="margin-top: 12px; display: flex; gap: 8px;">
+            <button class="btn" id="save-clio-config">Save OAuth Config</button>
+            <button class="btn secondary" id="test-clio-connection">Test Connection</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Practice Management Platform</div>
+          <div class="setting-description" id="platform-status">
+            <span class="status-indicator disconnected"></span>
+            No platform connected - using local storage
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn" id="connect-platform-btn">Connect Platform</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data & Privacy Settings -->
+    <div class="setting-group">
+      <div class="group-header">Data & Privacy</div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Local Data Storage</div>
+          <div class="setting-description">Billable entries are stored locally in JSON format</div>
+        </div>
+        <div class="setting-control">
+          <button class="btn secondary" id="view-data-btn">View Data Location</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Export All Data</div>
+          <div class="setting-description">Download all billable entries as JSON file</div>
+        </div>
+        <div class="setting-control">
+          <button class="btn secondary" id="export-data-btn">Export Data</button>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Clear All Data</div>
+          <div class="setting-description">Permanently delete all locally stored billable entries</div>
+        </div>
+        <div class="setting-control">
+          <button class="btn danger" id="clear-data-btn">Clear Data</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifications Settings -->
+    <div class="setting-group">
+      <div class="group-header">Notifications</div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Success Notifications</div>
+          <div class="setting-description">Show notification when billable entry is successfully logged</div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch active" id="success-notifications-toggle">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Daily Summary</div>
+          <div class="setting-description">Show daily billable summary at end of workday</div>
+        </div>
+        <div class="setting-control">
+          <div class="toggle-switch" id="daily-summary-toggle">
+            <div class="toggle-slider"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="setting-group">
+      <div class="group-header">About</div>
+      
+      <div class="setting-item">
+        <div class="setting-info">
+          <div class="setting-title">Legal Billables AI</div>
+          <div class="setting-description">
+            Version 1.0.0<br>
+            AI-powered billable tracking for legal professionals<br>
+            Built with OpenAI, Local Storage, and Practice Management APIs
+          </div>
+        </div>
+        <div class="setting-control">
+          <button class="btn secondary" id="about-btn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions-bar">
+    <button class="btn secondary" id="reset-btn">Reset to Defaults</button>
+    <button class="btn" id="save-btn">Save Settings</button>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html> 

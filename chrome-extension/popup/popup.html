@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal Billables AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <div class="logo">⚖️</div>
+      <h1>Legal Billables AI</h1>
+      <div class="version">v1.0</div>
+    </div>
+
+    <!-- Status Section -->
+    <div class="status-section">
+      <div id="connection-status" class="status-item">
+        <span class="status-indicator"></span>
+        <span class="status-text">Checking connection...</span>
+      </div>
+    </div>
+
+    <!-- Practice Management Integration -->
+    <div class="integration-section">
+      <h3>🔗 Practice Management</h3>
+      <div class="platform-selector">
+        <select id="platform-select" class="platform-dropdown">
+          <option value="">Select Platform</option>
+          <option value="clio">Clio</option>
+          <option value="practicepanther">PracticePanther</option>
+          <option value="mycase">MyCase</option>
+          <option value="local">Local Storage</option>
+        </select>
+        <button id="connect-platform" class="connect-btn">Connect</button>
+      </div>
+      <div id="platform-status" class="platform-status">
+        <span class="status-dot offline"></span>
+        <span>Using Local Storage</span>
+      </div>
+      
+      <!-- Clio Quick Setup -->
+      <div id="clio-quick-setup" class="clio-setup" style="display: none;">
+        <div class="quick-setup-content">
+          <p style="font-size: 12px; color: #666; margin: 8px 0;">
+            🔗 <strong>Quick Clio Setup:</strong> Get token to sync billables
+          </p>
+          <div style="display: flex; gap: 8px; margin-top: 8px;">
+            <button id="get-clio-token" class="setup-btn primary">
+              <span>Get Token</span>
+            </button>
+            <button id="configure-clio" class="setup-btn secondary">
+              <span>Configure</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Today's Statistics -->
+    <div class="stats-section">
+      <h3>📊 Today's Summary</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value" id="emails-logged">0</div>
+          <div class="stat-label">Emails Logged</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="time-tracked">0.0h</div>
+          <div class="stat-label">Time Tracked</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions-section">
+      <div class="action-buttons">
+        <button id="view-all-entries" class="action-btn">
+          <span class="action-icon">📝</span>
+          <span>View Entries</span>
+        </button>
+        <button id="view-settings" class="action-btn">
+          <span class="action-icon">⚙️</span>
+          <span>Settings</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-info">
+        <small id="storage-info">💾 Saving entries locally</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

@@ -1,0 +1,16 @@
+{
+  "id": 1753046462734,
+  "summary": "Drafted and sent correspondence to client addressing key legal considerations and updates pertinent to ongoing case management.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-20T21:21:00.842Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "sdfef",
+    "content": "df"
+  },
+  "createdAt": "2025-07-20T21:21:02.734Z",
+  "source": "chrome-extension"
+}

@@ -1,0 +1,16 @@
+{
+  "id": 1753047086800,
+  "summary": "Drafted and sent correspondence to client outlining the operational framework for addressing inactivity within specified time constraints, ensuring clarity on procedural expectations.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-20T21:31:24.969Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "demo title",
+    "content": "I'm going to show how inactivity will work within 45s. Let's send the email"
+  },
+  "createdAt": "2025-07-20T21:31:26.800Z",
+  "source": "chrome-extension"
+}

@@ -1,0 +1,16 @@
+{
+  "id": 1752901832366,
+  "summary": "Drafted and sent correspondence to client addressing pertinent legal matters and clarifying necessary actions for ongoing case management.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-19T05:10:30.269Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "Hell",
+    "content": "s dnfhvjhbjdfhvb dhf jdfvhjbdfhv"
+  },
+  "createdAt": "2025-07-19T05:10:32.366Z",
+  "source": "chrome-extension"
+}

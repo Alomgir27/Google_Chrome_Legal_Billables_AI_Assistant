@@ -1,0 +1,16 @@
+{
+  "id": 1752901451334,
+  "summary": "Drafted and sent correspondence to client addressing case updates and outlining necessary steps for ongoing legal proceedings.",
+  "timeSpent": 0.1,
+  "client": "A h joy066",
+  "case": "General Legal Matter",
+  "timestamp": "2025-07-19T05:04:11.333Z",
+  "type": "email",
+  "emailData": {
+    "recipient": "a.h.joy066@gmail.com",
+    "subject": "sdsg",
+    "content": "sdgb safd"
+  },
+  "createdAt": "2025-07-19T05:04:11.334Z",
+  "source": "chrome-extension"
+}
